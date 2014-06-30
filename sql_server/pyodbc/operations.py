@@ -185,9 +185,11 @@ class DatabaseOperations(BaseDatabaseOperations):
         Returns a quoted version of the given table, index or column name. Does
         not quote the given name if it's already been quoted.
         """
-        if name.startswith('[') and name.endswith(']'):
-            return name # Quoting once is enough.
-        return '[%s]' % name
+        return name
+        # Edited By Javrasya. Quting is disabled.
+        #if name.startswith('[') and name.endswith(']'):
+        #    return name # Quoting once is enough.
+        #return '[%s]' % name
 
     def random_function_sql(self):
         """
